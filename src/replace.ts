@@ -1,12 +1,10 @@
-// @flow
-
 import {curry} from "flow-static-land/lib/Fun";
 
 /**
  * Returns a new Array with the result of having replaced the elements at the
  * given index with the ones specified.
  */
-const replace = <Element>(
+const replaceF = <Element>(
   index: number,
   elements: Array<Element>,
   array: Array<Element>
@@ -16,4 +14,6 @@ const replace = <Element>(
   ...array.slice(index + elements.length)
 ];
 
-export default curry(replace);
+const replace = curry(replaceF)
+
+export default replace;

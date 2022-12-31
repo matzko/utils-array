@@ -1,13 +1,15 @@
-// @flow
-
 import {curry} from "flow-static-land/lib/Fun";
 
 /**
  * Returns a new Array with elements appended to the one given.
  */
-const append = <Element>(
+function appendF(
   elements: Array<Element>,
   array: Array<Element>
-): Array<Element> => [...array, ...elements];
+): Array<Element> {
+   return [...array, ...elements];
+}
 
-export default curry(append);
+const append = curry(appendF)
+
+export default append
